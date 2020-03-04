@@ -1,15 +1,43 @@
-<html>
-    <head>
-      {% if title %}
-      <title>{{ title }} - MIMTA</title>
-      {% else %}
-      <title>Welcome to MIMTA</title>
-      {% endif %}
-    </head>
-    <body>
-        <div>MIMTA <a href="/index">Home</a> <a href="/aboutme">Acerca de</a></div>
-        
-        <hr>
-        {% block content %}{% endblock %}
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% if title %}
+  <title>{{ title }} - MIMTA</title>
+  {% else %}
+  <title>Welcome to MIMTA</title>
+  {% endif %}
+</head>
+
+<body>
+
+  {% block navbar %}
+  <div>MIMTA 
+    <a href="{{ url_for('login') }}">Consultar</a> 
+    <a href="{{ url_for('aboutme') }}">Acerca de</a>
+  </div>
+  {% endblock %}
+  
+  <!-- Mensajes --> 
+  {% with messages= get_flashed_messages() %}
+  {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ messages }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+  {% endwith %}
+
+  
+  {% block form %}{% endblock %}
+
+  {% block profile_info %}{% endblock %}
+
+
+
+
+
+</body>
 </html>

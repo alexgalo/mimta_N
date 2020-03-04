@@ -1,0 +1,8 @@
+def uniqueFunction():
+    print("This works !")
+
+# Twitter API credentials
+CONSUMER_KEY = 'LWUB2D0iQyHPXHhpC8pT55nzV'
+CONSUMER_SECRET = 'TNR1bvtYIky6WEgaT2asIXMTn7tw4tCxyASiyIkWtO6I3Ai1dM'
+ACCESS_TOKEN = '961677984758411265-tgePBQJu08Ua4IseoCGwGvRv8GtWoj5'
+ACCESS_TOKEN_SECRET = 'MIAdan29KJWiWioDYoQAlaCMbjmISEsCEtZipO1wDWVmL'

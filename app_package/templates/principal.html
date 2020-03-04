@@ -1,8 +1,30 @@
 {% extends "base.html" %}
 
-{% block content %}
-    <h1>Hola, {{ posts[0].author.username }} !</h1>
-    {% for post in posts %}
-    <div><p>{{ post.author.username }} says: <b>{{ post.body }}</b></p></div>
-    {% endfor %}
+
+{% block profile_info %}
+<h2>Perfil obtenido vía Tweepy</h2>
+
+<h3>Nombre: <b>{{ user_1['name'] }}</b></h3>
+<h3>Username: <b>{{ user_1['username'] }}</b></h3>
+<h3>Post: <b>{{ user_1['post'] }}</b></h3>
+<h3>Seguidores: <b>{{ user_1['followers'] }}</b></h3>
+<h3>Seguidos: <b>{{ user_1['following'] }}</b></h3>
+<h3>Description: <b>{{ user_1['description'] }}</b></h3>
+<h3>Ubicación: <b>{{ user_1['location'] }}</b></h3>
+<h3>Creada: <b>{{ user_1['created_at'] }}</b></h3>
+
+    
+<hr>
+<hr>
+<h2>Perfil obtenido vía Twython</h2>
+
+<h3>Nombre: <b>{{ user_profileTw['name'] }}</b></h3>
+<h3>Username: <b>{{ user_profileTw['username'] }}</b></h3>
+<h3>Post: <b>{{ user_profileTw['post'] }}</b></h3>
+<h3>Seguidores: <b>{{ user_profileTw['followers'] }}</b></h3>
+<h3>Seguidos: <b>{{ user_profileTw['following'] }}</b></h3>
+<h3>Description: <b>{{ user_profileTw['description'] }}</b></h3>
+<h3>Ubicación: <b>{{ user_profileTw['location'] }}</b></h3>
+<h3>Creada: <b>{{ user_profileTw['created_at'] }}</b></h3>
+
 {% endblock %}

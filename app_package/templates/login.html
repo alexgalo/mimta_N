@@ -1,5 +1,52 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block content %}
-<p>Aquí va el logiin ! </p>
+
+{% block form %}
+    <div class="col-md-4">
+        <div class="page-header">
+            
+                <div class="panel-body">
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h1 id="titulo"> MIMTA</h1>
+                        <h2 id="tituloX">Mexican Internal Migration Twitter Auditor</h2>
+
+                        <p class="mt-5 mb-3 text-muted" id="by">By @_alexgalo</p>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <form action="" method="POST" novalidate class="form-signin">
+                                {{ form.hidden_tag() }}
+        
+                                <p id="form1"> 
+                                {{ form.username.label }}
+                                {{ form.username(size=23) }}
+                                    {% for error in form.username.errors %}
+                                    <span style="color: red;">[{{ error }}]</span>
+                                    {% endfor %}
+                                </p>
+                                <p id="form2"> {{ form.submit() }} </p>
+                                <br>
+                                <br>
+                                <br>
+                        </form>
+                </div>
+            
+        </div>
+    </div>
+
+
 {% endblock %}
+
+
+
